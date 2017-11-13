@@ -3,8 +3,9 @@
         <title>acochambradoApp</title>
 		<script>
 			function calcular(){ 
-				var valor = document.getElementById("campo").value;
+				//var valor = document.getElementById("campo").value;
 				
+                valor = "2 3 3";
 				texto = valor.trim();
 				
 				var res = texto.split(" ");
@@ -16,84 +17,24 @@
 			}
 			
 			function arrayContar(res){
-				//alert(res);
-				arr = res;
-				contador = 0;
-				var correto = [];
-				
-				coluna = [];
-				
-				for(x=0;x<arr.length;x++){
-					
-					//verifico se é a primeira vez
-					if(x == 0){
-						//acrescento o primeiro numero no array
-						coluna.push(arr[x]);
-						//console.log(correto);
-						
-						
-						//copiando codigo
-						
-							for(y = 0; y < arr.length; y++){
-							
-								if(arr[x] == arr[y]){
-									contador++
-								}
-							}
-							
-							coluna.push(contador);
-							
-							correto.push(coluna);
-							
-							contador = 0; y = 0;
-						
-						//copiando codigo
-					}else{
-						//verifico se o numero anterior ja existe no array
-						if(arr[x] != correto[x-1]){
-
-							//acrescento o primeiro numero no array
-							coluna.push(arr[x]);
-							//console.log(correto);
-
-							
-							//copiando codigo
-							
-								for(y = 0; y < arr.length; y++){
-								
-									if(arr[x] == arr[y]){
-										contador++
-									}
-								}
-								
-								coluna.push(contador);
-								
-								correto.push(coluna);
-								
-								contador = 0; y = 0;
-								
-						}
-					
-					}
-					
-					console.log(correto);
-					
-					
-				}
-				
+			    arr = res;
+                linha = [];
+                coluna = [];
+                
+                
+                for(x =0;x<arr.length;x++){
+                
+                    if(x == 0){
+                        
+                    }
+                }
+                
+                
 				return arr;
 			}
 
 			
-			/*function limpaFinal(valor){
-				fim = valor.charAt(valor.length-1);
-				if(fim == " "){
-					 remove = valor.slice(0, valor.length-1);
-					 return limpaFinal(remove);
-				}else{
-					return valor;
-				}
-			}*/
+			
 		</script>
     </head>
     <body>
