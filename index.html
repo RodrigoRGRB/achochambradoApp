@@ -1,10 +1,31 @@
 <html>
     <head>
-        <title>achochambradoApp</title>
+        <title>acochambradoApp</title>
+		<script>
+			function calcular(){ 
+				var valor = document.getElementById("campo").value;
+				//var res = valor.split(" ");
+				alert(valor.charAt(valor.length-1))
+				
+				texto = limpaFinal(valor);
+				alert(texto);
+				//alert(res);
+			}
+			
+			function limpaFinal(valor){
+				fim = valor.charAt(valor.length-1);
+				if(fim == " "){
+					 remove = valor.slice(0, valor.length-1);
+					 return limpaFinal(remove);
+				}else{
+					return valor;
+				}
+			}
+		</script>
     </head>
     <body>
-        <h1>achochambradoApp</h1>
-		<input type="text">
-		<button>Calcular</button>
+        <h1>acochambradoApp</h1>
+		<input type="text" id="campo">
+		<button onclick="calcular()">Calcular</button>
     </body>
 </html>
