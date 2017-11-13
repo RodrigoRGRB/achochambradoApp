@@ -7,12 +7,15 @@
 				//var res = valor.split(" ");
 				alert(valor.charAt(valor.length-1))
 				
-				texto = limpaFinal(valor);
-				alert(texto);
+				texto = valor.trim();
+				
+				var res = texto.split(" ");
+				
+				alert(res.sort());
 				//alert(res);
 			}
 			
-			function limpaFinal(valor){
+			/*function limpaFinal(valor){
 				fim = valor.charAt(valor.length-1);
 				if(fim == " "){
 					 remove = valor.slice(0, valor.length-1);
@@ -20,7 +23,7 @@
 				}else{
 					return valor;
 				}
-			}
+			}*/
 		</script>
     </head>
     <body>
