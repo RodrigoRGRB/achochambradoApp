@@ -5,7 +5,7 @@
 			function calcular(){ 
 				//var valor = document.getElementById("campo").value;
 				
-                valor = "2 3 3";
+                valor = "2 2 3";
 				texto = valor.trim();
 				
 				var res = texto.split(" ");
@@ -23,15 +23,46 @@
                 
                 
                 for(x =0;x<arr.length;x++){
-                
+                    console.log(x);
                     if(x == 0){
+                        coluna.push(arr[x]);
+                        quantidade = contarValores(arr[x]);
+                        coluna.push(quantidade);
+                        console.log(coluna);
+                        linha.push(coluna);
+                        console.log(linha);
                         
+                    }else{
+                        console.log("passei pelço else"+linha[x-1][0])
+                        if(linha[x-1][0] != arr[x]){
+                            coluna.push(arr[x]);
+                            quantidade = contarValores(arr[x]);
+                            coluna.push(quantidade);
+                            linha.push(coluna);
+                        }
                     }
+                    
+                    coluna = [];
+                   
+                    
+                        
                 }
                 
                 
 				return arr;
 			}
+                             
+            function contarValores(numero){
+                contador = 0;
+                
+                for(y =0;y<arr.length;y++){
+                    if(numero == arr[y]){
+                        contador++
+                    }
+                }
+                        
+                return contador;
+            }
 
 			
 			
