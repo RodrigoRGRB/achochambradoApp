@@ -4,16 +4,63 @@
 		<script>
 			function calcular(){ 
 				var valor = document.getElementById("campo").value;
-				//var res = valor.split(" ");
-				alert(valor.charAt(valor.length-1))
 				
 				texto = valor.trim();
 				
 				var res = texto.split(" ");
 				
-				alert(res.sort());
-				//alert(res);
+				res.sort();
+				
+				tamanho = arrayContar(res);
+				alert(tamanho);
 			}
+			
+			function arrayContar(res){
+				//alert(res);
+				arr = res;
+				contador = 0;
+				var correto = [][];
+				cont = 0;
+				
+				for(x=0;x<arr.length;x++){
+					
+					//verifico se é a primeira vez
+					if(x == 0){
+						//acrescento o primeiro numero no array
+						correto.push(arr[x]);
+						console.log(correto);
+						cont++;
+					}else{
+						//verifico se o numero anterior ja existe no array
+						if(arr[x] != correto[x-1]){
+						
+							correto.push(arr[x]);
+							console.log(correto[x-1]);
+							cont++;
+							
+							for(y = 0; y < arr.length; y++){
+								if(arr[x] == arr[y]){
+									contador++
+								}
+							}
+							
+							correto[correto.indexOf(arr[x])][cont-1] = contador;
+							
+							
+							
+							contador = 0; y = 0;
+							
+						}
+					
+					}
+					
+					
+					
+				}
+				
+				return arr;
+			}
+
 			
 			/*function limpaFinal(valor){
 				fim = valor.charAt(valor.length-1);
