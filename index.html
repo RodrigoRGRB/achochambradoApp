@@ -19,41 +19,62 @@
 				//alert(res);
 				arr = res;
 				contador = 0;
-				var correto = [][];
-				cont = 0;
+				var correto = [];
+				
+				coluna = [];
 				
 				for(x=0;x<arr.length;x++){
 					
 					//verifico se é a primeira vez
 					if(x == 0){
 						//acrescento o primeiro numero no array
-						correto.push(arr[x]);
-						console.log(correto);
-						cont++;
-					}else{
-						//verifico se o numero anterior ja existe no array
-						if(arr[x] != correto[x-1]){
+						coluna.push(arr[x]);
+						//console.log(correto);
 						
-							correto.push(arr[x]);
-							console.log(correto[x-1]);
-							cont++;
-							
+						
+						//copiando codigo
+						
 							for(y = 0; y < arr.length; y++){
+							
 								if(arr[x] == arr[y]){
 									contador++
 								}
 							}
 							
-							correto[correto.indexOf(arr[x])][cont-1] = contador;
+							coluna.push(contador);
 							
-							
+							correto.push(coluna);
 							
 							contador = 0; y = 0;
+						
+						//copiando codigo
+					}else{
+						//verifico se o numero anterior ja existe no array
+						if(arr[x] != correto[x-1]){
+
+							//acrescento o primeiro numero no array
+							coluna.push(arr[x]);
+							//console.log(correto);
+
 							
+							//copiando codigo
+							
+								for(y = 0; y < arr.length; y++){
+								
+									if(arr[x] == arr[y]){
+										contador++
+									}
+								}
+								
+								coluna.push(contador);
+								
+								correto.push(coluna);
+								
 						}
 					
 					}
 					
+					console.log(correto);
 					
 					
 				}
