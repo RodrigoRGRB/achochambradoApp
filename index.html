@@ -20,17 +20,68 @@
 				//tamanho do rol
 				rol = res;
 				
-				console.log(rol.length);
-				
 				tamanho = arrayContar(res);
 				
+				//calculo do log de linhas
 				i = calcularLog(rol.length);
-				console.log(i);
 				
 				amp = calcularAmplitude(rol, i);
 				
 				
-				console.log(amp);
+				//amplitude arrendonda
+				h = arrendondar(amp);
+				
+				var control;
+				var cont = 0;
+				var limite;
+				w = 0;
+				soma = 0;
+				sfri =0;
+				
+				
+				while(w < i){
+				//console.log(w);
+					if(w == 0){ 
+						control = rol[0]; 
+						limite = eval(control) + eval(h); 
+						
+						console.log("control = "+control+ " limite = "+ limite);
+					}else {
+						control = limite;
+						limite = eval(control) + eval(h); 
+					}
+					
+					
+					for(k = 0; k < rol.length;k++){
+							if(rol[k] >= control && rol[k] <limite){
+								//console.log("inicio = "+control+" limite "+limite+" valor = "+rol[k]);
+								
+								cont++;
+								
+							}
+					}
+					
+					//soma
+					soma = soma+cont;
+					fri = cont / rol.length;
+					sfri = sfri + fri;
+					console.log(w+1+"ºClasse "+control+" |- "+limite+" F1 =  " + cont + " Fri "+ fri);
+					
+					//console.log(cont);
+					
+					cont = 0;
+						w++;
+					
+					
+					
+				}
+				
+				console.log(soma)
+				console.log(sfri)
+				
+				
+				
+				
 				
 				//calcula o log
 				//alert(Math.LOG10E*Math.log(50));
@@ -114,5 +165,9 @@
         <h1>acochambradoApp</h1>
 		<input type="text" id="campo">
 		<button onclick="calcular()">Calcular</button>
+		<br>
+		<div id="tabela">
+			Resultado da tabela;
+		</div>
     </body>
 </html>
