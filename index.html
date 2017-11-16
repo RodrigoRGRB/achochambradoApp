@@ -17,9 +17,16 @@
 				
 				res.sort(sortfunction);
 				
-				rol = arrayContar(res);
-				alert(rol);
-				alert(Math.log(50));
+				//tamanho do rol
+				rol = res;
+				
+				tamanho = arrayContar(res);
+				
+				
+				console.log(tamanho.length);
+				
+				//calcula o log
+				alert(Math.LOG10E*Math.log(50));
 			}
 			
 			function arrayContar(res){
@@ -54,7 +61,7 @@
                 }
                 
                 
-				return arr;
+				return linha;
 			}
                              
             function contarValores(numero){
