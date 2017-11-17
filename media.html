@@ -9,7 +9,7 @@
 
 		function calcular(){ 
 			
-			var valor = "25 22 35 26 27 28 35 33";
+			var valor = "25 22 35 28 35 33";
 	
 			texto = valor.trim();
 			
@@ -23,20 +23,43 @@
 			
 			soma = somaArray(rol);
 			media = soma / rol.length;
+			var instrucao = "";
 			
-			console.log(media.toFixed(2));
+			instrucao += "Média = "+media.toFixed(2);
 			
 			moda = arrayContar(rol);
 			
-			console.log(moda);
+			//console.log(moda);
+			instrucao += "<br>Moda = "+moda;
 			
-			console.log(mediana(rol));
+			//console.log(mediana(rol));
+			instrucao += "<br>Mediana = "+mediana(rol);
+			
+			document.getElementById("campoTabela").innerHTML = instrucao;
 			
 			
 			
 		}
 		
-		function mediana
+		function mediana(values){
+			if(values.length % 2 == 0){
+				media = values.length / 2;
+				n1 = (values[media]);
+				n2 = (values[media-1]);
+				media = (eval(n1) + eval(n2))/ 2;
+				
+				return media;
+				
+			}else{
+			media = values.length / 2;
+			
+			console.log(media);
+				return Math.round(media);
+			}
+			
+			
+			
+		}
 
 		
 		function somaArray(rol){
@@ -120,8 +143,6 @@
 		Digite o rol dos dados<input type="text" id="campo"><br>
 		<button onclick="calcular()">Calcular</button>
 		<br>
-		<div id="campoTabela">
-			
-		</div>
+		<div id="campoTabela"></div>
     </body>
 </html>
