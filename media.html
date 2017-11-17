@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>acochambradoApp</title>
+		<script>
+		
+		function sortfunction(a, b){
+		  return (a - b) //faz com que o array seja ordenado numericamente e de ordem crescente.
+		}
+
+		function calcular(){ 
+			
+			var valor = "25 22 35 28 35 33";
+	
+			texto = valor.trim();
+			
+			var res = texto.split(" ");
+			
+			res.sort(sortfunction);
+			
+			//tamanho do rol
+			rol = res;
+			
+			
+			soma = somaArray(rol);
+			media = soma / rol.length;
+			
+			console.log(media.toFixed(2));
+			
+			moda = arrayContar(rol);
+			
+			console.log(moda);
+			
+		}
+		
+		function somaArray(rol){
+			var soma = 0;
+			
+			for(x = 0;x < rol.length;x++){
+				soma = eval(rol[x]) + soma;
+			}
+			
+			return soma;
+		}
+		
+		function arrayContar(res){
+			    arr = res;
+                linha = [];
+                coluna = [];
+                
+                
+                for(x = 0;x<arr.length;x++){
+                    //console.log(x);
+                    if(x == 0){
+                        coluna.push(arr[x]);
+                        quantidade = contarValores(arr[x]);
+                        coluna.push(quantidade);
+                        //console.log(coluna);
+                        linha.push(coluna);
+                        //console.log(linha);
+                        
+                    }else{
+                        if(linha[linha.length-1][0] != arr[x]){
+                            coluna.push(arr[x]);
+                            quantidade = contarValores(arr[x]);
+                            coluna.push(quantidade);
+                            linha.push(coluna);
+                        }
+                    }
+                    
+					
+					
+                    coluna = [];
+           
+                }
+                
+                
+				return linha;
+			}
+                             
+            function contarValores(numero){
+                contador = 0;
+                
+                for(y =0;y<arr.length;y++){
+                    if(numero == arr[y]){
+                        contador++
+                    }
+                }
+                        
+                return contador;
+            }
+		
+			
+			
+		</script>
+    </head>
+    <body>
+        <h1>Média - Moda - Mediana</h1>
+		Digite o rol dos dados<input type="text" id="campo"><br>
+		<button onclick="calcular()">Calcular</button>
+		<br>
+		<div id="campoTabela">
+			
+		</div>
+    </body>
+</html>
