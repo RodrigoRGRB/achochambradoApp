@@ -9,7 +9,7 @@
 
 		function calcular(){ 
 			
-			var valor = "25 22 35 28 35 33";
+			var valor = "25 22 35 26 27 28 35 33";
 	
 			texto = valor.trim();
 			
@@ -30,7 +30,14 @@
 			
 			console.log(moda);
 			
+			console.log(mediana(rol));
+			
+			
+			
 		}
+		
+		function mediana
+
 		
 		function somaArray(rol){
 			var soma = 0;
@@ -46,8 +53,8 @@
 			    arr = res;
                 linha = [];
                 coluna = [];
-                
-                
+				valores = [];
+                maior = 0;
                 for(x = 0;x<arr.length;x++){
                     //console.log(x);
                     if(x == 0){
@@ -57,24 +64,39 @@
                         //console.log(coluna);
                         linha.push(coluna);
                         //console.log(linha);
-                        
+						maior = 0;
+                       
                     }else{
                         if(linha[linha.length-1][0] != arr[x]){
                             coluna.push(arr[x]);
                             quantidade = contarValores(arr[x]);
                             coluna.push(quantidade);
                             linha.push(coluna);
+							
+							//maior
+							if(quantidade == maior){
+								valores.push(arr[x]);
+								maior = quantidade;
+							}else if(quantidade > maior){
+								valores = [];
+								valores.push(arr[x]);
+								maior = quantidade;
+							}
                         }
                     }
-                    
-					
-					
-                    coluna = [];
+                     coluna = [];
            
                 }
                 
-                
-				return linha;
+                if(valores.length == 1){
+				
+					return valores;
+				}else if(valores.length > 1){
+					valores = "amodal";
+					
+					return valores;
+					
+				}
 			}
                              
             function contarValores(numero){
