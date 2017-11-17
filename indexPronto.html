@@ -5,28 +5,43 @@
 			function calcular(){ 
 				var valor = document.getElementById("campo").value;
 				var tabela = "";
+                tabela += '<br><input type="text" value="i" disabled><input type="text" value="ROL" disabled><input type="text" value="fi" disabled><input type="text" value="fri" disabled><input type="text" value="Fi" disabled><input type="text" value="FRi" disabled>';
 				for(w = 0;w<valor;w++){
-					 tabela += '<br>Quantas linhas<input type="text" id="campo'+w+'"><input type="text" id="fr'+w+'">';
+					 tabela += '<br><input type="text" id="linha'+w+'" value="'+(w+1)+'" disabled><input type="text" id="campo'+w+'"><input type="text" id="f'+w+'"><input type="text" id="fr'+w+'" disabled><input type="text" id="ff'+w+'" disabled><input type="text" id="frr'+w+'" disabled>';
 				}
-				tabela += '<br><button onclick="gerarTabela()">Gerar Estatistica</button>';
+				document.getElementById('botaoTabela').innerHTML =  '<br><button onclick="gerarTabela()">Gerar Estatistica</button>';
 				document.getElementById('campoTabela').innerHTML=tabela;
 				
-				
-				//calcula o log
-				//alert(Math.LOG10E*Math.log(50));
 			}
 			function gerarTabela(){
 				var valor = document.getElementById("campo").value;
-					
-				alert(valor);
+				var tabela = "";
+                tabela += '<br><input type="text" value="i" disabled><input type="text" value="ROL" disabled><input type="text" value="fi" disabled><input type="text" value="fri" disabled><input type="text" value="Fi" disabled><input type="text" value="FRi" disabled>';
+                var contar = contarValores();
+                var soma = 0;
+                var somafri = 0;
+                for(w = 0; w<valor;w++){
+                    
+                    numero = document.getElementById("f"+w).value;
+                    rol = document.getElementById("campo"+w).value;
+                    
+                    fri = numero / contar;
+                    
+                    somafri = fri + somafri;
+                    soma = soma + eval(numero);
+                    console.log(soma);
+                    
+                    tabela += '<br><input type="text" id="linha'+w+'" value="'+(w+1)+'" disabled><input type="text" id="campo'+w+'" value="'+rol+'"><input type="text" id="f'+w+'" value="'+numero+'"><input type="text" id="fr'+w+'" value="'+fri+'" disabled><input type="text" id="ff'+w+'" value="'+soma+'" disabled><input type="text" id="frr'+w+'" disabled value="'+somafri+'">';
+                    
+                    fri = 0;
+                }
+                
+                
+                tabela += '<br><input type="text" value="" disabled><input type="text" value="" disabled><input type="text" id="somatorio" value="'+contar+'" disabled><input type="text" value="'+somafri+'" disabled><input type="text" value="" disabled><input type="text" value="" disabled>';
+                
+                document.getElementById('campoTabela').innerHTML = tabela;
 			}
-			function calcularLog(numeroLog){
-				//alert("este é o numero "+numeroLog+ " este é o log "+ Math.LOG10E*Math.log(numeroLog));
-				expressao = 1 + 3.3 * Math.LOG10E*Math.log(numeroLog);
-				
-			 return expressao;
-				
-			}
+		
 			
 			function calcularAmplitude(rol, i){
 				//alert("numero minimo "+rol[0] + " numero ultimo" + rol[rol.length-1] + " valor de i" + i);
@@ -43,51 +58,17 @@
 			}
 			
 			
-			function arrayContar(res){
-			    arr = res;
-                linha = [];
-                coluna = [];
+			        
+            function contarValores(){
+                var contar = 0;
+                var valor = document.getElementById("campo").value;
                 
-                
-                for(x = 0;x<arr.length;x++){
-                    //console.log(x);
-                    if(x == 0){
-                        coluna.push(arr[x]);
-                        quantidade = contarValores(arr[x]);
-                        coluna.push(quantidade);
-                        //console.log(coluna);
-                        linha.push(coluna);
-                        //console.log(linha);
-                        
-                    }else{
-                        if(linha[linha.length-1][0] != arr[x]){
-                            coluna.push(arr[x]);
-                            quantidade = contarValores(arr[x]);
-                            coluna.push(quantidade);
-                            linha.push(coluna);
-                        }
-                    }
-                    
-                    coluna = [];
-                   
-                    
-                        
+                for(w = 0; w<valor;w++){
+                    contar = contar + eval(document.getElementById("f"+w).value);
                 }
                 
+                return contar;
                 
-				return linha;
-			}
-                             
-            function contarValores(numero){
-                contador = 0;
-                
-                for(y =0;y<arr.length;y++){
-                    if(numero == arr[y]){
-                        contador++
-                    }
-                }
-                        
-                return contador;
             }
 
 			
@@ -102,5 +83,8 @@
 		<div id="campoTabela">
 			
 		</div>
+        <div id="botaoTabela">
+        
+        </div>
     </body>
 </html>
