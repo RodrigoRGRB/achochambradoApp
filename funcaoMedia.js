@@ -21,7 +21,8 @@
 			media = soma / rol.length;
 			var instrucao = "";
 			
-			instrucao += "Média = "+media.toFixed(2);
+            instrucao += "Rol de dados Crescente: "+rol;
+			instrucao += "<br>Média = "+media.toFixed(2);
 			
 			moda = arrayContar(rol);
 			
@@ -38,19 +39,24 @@
 		}
 		
 		function mediana(values){
+            console.log(values);
 			if(values.length % 2 == 0){
 				media = values.length / 2;
 				n1 = (values[media]);
-				n2 = (values[media-1]);
+                console.log(n1);
+				n2 = (values[eval(media)-1]);
+                console.log(n2);
 				media = (eval(n1) + eval(n2))/ 2;
-				
+				console.log(media);
 				return media;
 				
 			}else{
-			media = values.length / 2;
+			     media = values.length / 2;
 			
-			console.log(media);
-				return Math.round(media);
+			     teste = Math.round(media) - 1;
+                
+                console.log(teste);
+				return values[teste];
 			}
 			
 			

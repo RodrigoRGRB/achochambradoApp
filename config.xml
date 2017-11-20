@@ -14,5 +14,8 @@
     
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
+    
     <icon src="favicon.ico" />
+    <gap:splash	src="splash.png"/>
+
 </widget>
