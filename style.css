@@ -1,72 +1,108 @@
  * {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif
-        }
+     margin: 0;
+     padding: 0;
+     font-family: sans-serif
+ }
 
-        header {
-            text-align: center;
-            padding: 5px 0;
-            background-color: #19B5FE;
-            color: white;
-        }
+ header {
+     text-align: center;
+     padding: 5px 0;
+     background-color: #19B5FE;
+     color: white;
+ }
 
-        input[type=text]{
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            box-sizing: border-box;
-        }
+ input[type=text] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 2px;
+     box-sizing: border-box;
+ }
 
-        button {
-            width: 100%;
-            background-color: #19B5FE;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+ button {
+     width: 100%;
+     background-color: #19B5FE;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
 
-        button:hover {
-            background-color: #45a049;
-        }
-        
-        .formulario{
-            width: 80%;
-            margin: 20 auto;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-        
-        /*tabela*/
-        #tabelacss {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+ button:hover {
+     background-color: #45a049;
+ }
 
-        #tabelacss td, #tabelacss th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
+ .formulario {
+     width: 80%;
+     margin: 20 auto;
+     background-color: #f2f2f2;
+     padding: 20px;
+ }
 
-        #tabelacss tr:nth-child(even){background-color: white;}
+ /*tabela*/
 
-        #tabelacss tr:hover {background-color: #ddd;}
+ #tabelacss {
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
 
-        #tabelacss th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #19B5FE;
-            color: white;
-        }
-        
-        #campotabela{
-            margin:20px 0;
-        }
+ #tabelacss td,
+ #tabelacss th {
+     border: 1px solid #ddd;
+     padding: 8px;
+ }
+
+ #tabelacss tr:nth-child(even) {
+     background-color: white;
+ }
+
+ #tabelacss tr:hover {
+     background-color: #ddd;
+ }
+
+ #tabelacss th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #19B5FE;
+     color: white;
+ }
+
+ #campotabela {
+     margin: 20px 0;
+ }
+
+ /* Menu */
+
+ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+li{
+    display: block;
+    margin: 20px;
+    background-color:#19B5FE ;
+}
+
+li a{
+   color: white;
+   text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+.sobre{
+    background-color: crimson;
+}
+
+.imagem{
+    float: left;
+    width: 2%;
+    margin: 0 15px; 
+}
