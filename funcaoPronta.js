@@ -3,11 +3,12 @@ function calcular() {
     var titulo = document.getElementById("titulo").value;
     var fonte = document.getElementById("fonte").value;
 
-    var tabela = titulo;
+    var tabela = titulo+'<br>';
+	console.log(tabela);
     tabela += '<table id="tabelacss">';
     tabela += '<thead><tr><th>i</th><th>ROL</th><th>f<sub>i</sub></th><th>fr<sub>i</sub></th><th>F<sub>i</sub></th><th>FR<sub>i</sub></th></tr></thead>';
     for (w = 0; w < valor; w++) {
-        tabela += '<tr><td><input type="text" id="linha' + w + '" value="' + (w + 1) + '" disabled></td><td><input type="text" id="campo' + w + '"></td><td><input type="text" id="f' + w + '"></td><td><input type="text" id="fr' + w + '" disabled></td><td><input type="text" id="ff' + w + '" disabled></td><td> <input type="text" id="frr' + w + '" disabled></td></tr>"';
+        tabela += '<tr><td><input type="text" id="linha' + w + '" value="' + (w + 1) + '" disabled></td><td><input type="text" id="campo' + w + '"></td><td><input type="text" id="f' + w + '"></td><td><input type="text" id="fr' + w + '" disabled></td><td><input type="text" id="ff' + w + '" disabled></td><td> <input type="text" id="frr' + w + '" disabled></td></tr>';
 
 
     }
@@ -39,7 +40,7 @@ function gerarTabela() {
         console.log(soma);
 
 
-        tabela += '<tr><td><input type="text" id="linha' + w + '" value="' + (w + 1) + '" disabled></td><td><input type="text" id="campo' + w + '" value="' + rol + '"></td><td><input type="text" id="f' + w + '" value="' + numero + '"></td><td><input type="text" id="fr' + w + '" value="' + fri + '" disabled></td><td><input type="text" id="ff' + w + '" value="' + soma + '" disabled></td><td> <input type="text" id="frr' + w + '" disabled value="' + somafri + '"></td></tr>"';
+        tabela += '<tr><td><input type="text" id="linha' + w + '" value="' + (w + 1) + '" disabled></td><td><input type="text" id="campo' + w + '" value="' + rol + '"></td><td><input type="text" id="f' + w + '" value="' + eval(numero).toFixed(2) + '"></td><td><input type="text" id="fr' + w + '" value="' + fri.toFixed(2) + '" disabled></td><td><input type="text" id="ff' + w + '" value="' + soma + '" disabled></td><td> <input type="text" id="frr' + w + '" disabled value="' + somafri + '"></td></tr>"';
 
 
         fri = 0;
