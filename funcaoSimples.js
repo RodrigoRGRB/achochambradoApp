@@ -38,8 +38,8 @@
 				sfri =0;
 				
 				//testando criação de tabela
-				var tabela = titulo;
-				tabela += '<table border>';
+				var tabela = '<span="titulo">'+titulo+'</span>';
+				tabela += '<table id="tabelacss">';
 				tabela += '<thead><tr><th>i</th><th>ROL</th><th>f<sub>i</sub></th><th>fr<sub>i</sub></th><th>F<sub>i</sub></th><th>FR<sub>i</sub></th></tr></thead>';
 				//testando criação de tabela
 				
@@ -91,7 +91,7 @@
 				console.log(sfri)
 				
 				tabela += '</table>';
-				tabela += fonte;
+				tabela += '<i>'+fonte+'</i>';
 				document.getElementById('campoTabela').innerHTML=tabela;
 				
 				
