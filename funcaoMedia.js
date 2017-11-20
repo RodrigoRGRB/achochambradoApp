@@ -4,8 +4,8 @@
 		}
 
 		function calcular(){ 
-			
-			var valor = "25 22 35 28 35 33";
+			valor = document.getElementById("campo").value;
+			//var valor = "25 22 35 28 35 33";
 	
 			texto = valor.trim();
 			

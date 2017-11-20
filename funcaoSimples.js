@@ -4,11 +4,11 @@
 		}
 
 			function calcular(){ 
-				//var valor = document.getElementById("campo").value;
+				var valor = document.getElementById("campo").value;
 				var fonte = document.getElementById("fonte").value;
 				var titulo = document.getElementById("titulo").value;
 				
-				valor = "33 35 35 39 41 41 42 45 47 48 50 52 53 54 55 55 57 59 60 60 61 64 65 65 65 66 66 67 68 69 71 73 73 74 74 76 77 77 78 80 81 84 85 85 88 89 91 94 94 98";
+				//valor = "33 35 35 39 41 41 42 45 47 48 50 52 53 54 55 55 57 59 60 60 61 64 65 65 65 66 66 67 68 69 71 73 73 74 74 76 77 77 78 80 81 84 85 85 88 89 91 94 94 98";
                 
 				texto = valor.trim();
 				

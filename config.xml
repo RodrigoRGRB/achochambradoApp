@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" version="1.0.0" id="rodrigorgrb.com.br"
+    >
+
+    <name>AcochambradoApp</name>
+
+    <description>
+    O AcochambradoApp é para aquele aluno,que assim como eu que tem preguiça de tudo e quer fazer da maneira mais rápida e prática qualquer coisa em sua vida, visando isso criei um app que consiguirá criar dados estatisticos de uma forma rapida e simples!
+    </description>
+
+    <author href="http://rodrigorgrb.com.br"  
+        email="rodrigorgrb@gmail.com"> Rodrigo Gabriel
+    </author>
+    
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <icon src="favicon.ico" />
+</widget>
