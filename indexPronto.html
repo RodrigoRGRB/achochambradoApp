@@ -1,90 +1,40 @@
 <html>
     <head>
         <title>acochambradoApp</title>
-		<script>
-			function calcular(){ 
-				var valor = document.getElementById("campo").value;
-				var tabela = "";
-                tabela += '<br><input type="text" value="i" disabled><input type="text" value="ROL" disabled><input type="text" value="fi" disabled><input type="text" value="fri" disabled><input type="text" value="Fi" disabled><input type="text" value="FRi" disabled>';
-				for(w = 0;w<valor;w++){
-					 tabela += '<br><input type="text" id="linha'+w+'" value="'+(w+1)+'" disabled><input type="text" id="campo'+w+'"><input type="text" id="f'+w+'"><input type="text" id="fr'+w+'" disabled><input type="text" id="ff'+w+'" disabled><input type="text" id="frr'+w+'" disabled>';
-				}
-				document.getElementById('botaoTabela').innerHTML =  '<br><button onclick="gerarTabela()">Gerar Estatistica</button>';
-				document.getElementById('campoTabela').innerHTML=tabela;
-				
-			}
-			function gerarTabela(){
-				var valor = document.getElementById("campo").value;
-				var tabela = "";
-                tabela += '<br><input type="text" value="i" disabled><input type="text" value="ROL" disabled><input type="text" value="fi" disabled><input type="text" value="fri" disabled><input type="text" value="Fi" disabled><input type="text" value="FRi" disabled>';
-                var contar = contarValores();
-                var soma = 0;
-                var somafri = 0;
-                for(w = 0; w<valor;w++){
-                    
-                    numero = document.getElementById("f"+w).value;
-                    rol = document.getElementById("campo"+w).value;
-                    
-                    fri = numero / contar;
-                    
-                    somafri = fri + somafri;
-                    soma = soma + eval(numero);
-                    console.log(soma);
-                    
-                    tabela += '<br><input type="text" id="linha'+w+'" value="'+(w+1)+'" disabled><input type="text" id="campo'+w+'" value="'+rol+'"><input type="text" id="f'+w+'" value="'+numero+'"><input type="text" id="fr'+w+'" value="'+fri+'" disabled><input type="text" id="ff'+w+'" value="'+soma+'" disabled><input type="text" id="frr'+w+'" disabled value="'+somafri+'">';
-                    
-                    fri = 0;
-                }
-                
-                
-                tabela += '<br><input type="text" value="" disabled><input type="text" value="" disabled><input type="text" id="somatorio" value="'+contar+'" disabled><input type="text" value="'+somafri+'" disabled><input type="text" value="" disabled><input type="text" value="" disabled>';
-                
-                document.getElementById('campoTabela').innerHTML = tabela;
-			}
-		
-			
-			function calcularAmplitude(rol, i){
-				//alert("numero minimo "+rol[0] + " numero ultimo" + rol[rol.length-1] + " valor de i" + i);
-				h = eval((rol[rol.length-1] -  rol[0] )/ i);
-				//alert(h);
-				
-				return h;
-			}
-			
-			function arrendondar(numeroRedondo){
-				numeroRedondo = Math.round(numeroRedondo);
-				
-				return numeroRedondo;
-			}
-			
-			
-			        
-            function contarValores(){
-                var contar = 0;
-                var valor = document.getElementById("campo").value;
-                
-                for(w = 0; w<valor;w++){
-                    contar = contar + eval(document.getElementById("f"+w).value);
-                }
-                
-                return contar;
-                
-            }
-
-			
-			
-		</script>
+		<script src="funcaoPronta.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+         <header>
         <h1>AcochambradoApp</h1>
-		Quantas linhas<input type="text" id="campo"><br>
-		<button onclick="calcular()">Calcular</button>
-		<br>
-		<div id="campoTabela">
+    </header>
+        
+		
+		
+        
+        
+        <section class="formulario">
+        <label for="campo">Quantas Linhas?</label>
+        <input type="text" id="campo" placeholder="Seu rol de dados ..">
+
+        <label for="titulo">Digite o titulo</label>
+        <input type="text" id="titulo" placeholder="Seu titulo ..">
+
+        <label for="fonte">Digite a fonte</label>
+        <input type="text" id="fonte" placeholder="Sua fonte..">
+
+
+        <button onclick="calcular()">Calcular</button>
+        </section>
+
+        <div id="campoTabela">
 			
 		</div>
         <div id="botaoTabela">
         
         </div>
+    
+        
+        
     </body>
 </html>
